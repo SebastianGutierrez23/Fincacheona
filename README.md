@@ -171,82 +171,7 @@ The backend must be run in the command console by running python -m uvicorn main
 
 Then we can view our application at the address that it gives us in this case http://127.0.0.1:8000/docs
 
-2. Configure the linter
-Linters are usually highly configurable. You can define specific rules in a configuration file. For example:
 
-ESLint: Create an .eslintrc.json or .eslintrc.js file in the root of your project.
-
-Pylint: Create a .pylintrc file.
-
-Stylelint: Create a .stylelintrc.json file.
-
-3. Run the linter
-You can run the linter manually from the terminal or integrate it into your code editor.
-
-From the terminal:
-
-Example with ESLint: npx eslint file.js
-
-Example with Flake8: flake8 file.py
-
-In a code editor (such as VS Code):
-
-Install the linter extension (for example, the ESLint extension for VS Code).
-
-The linter will automatically check your code as you type and display errors and warnings in real time.
-
-Examples of popular linters:
-JavaScript/TypeScript: ESLint, Prettier (for formatting).
-
-Python: Flake8, Pylint, Black (for formatting).
-
-CSS/SCSS: Stylelint.
-
-HTML: HTMLHint.
-
-Go: Golangci-lint.
-
-Ruby: RuboCop.
-
-Java: Checkstyle, PMD.
-
-** USO DE WEBPACK**
-
-Step 1: Create a Project
-Create a folder for your project:
-
-bash
-Copy
-mkdir my-webpack-project
-cd my-webpack-project
-Initialize a Node.js project:
-
-bash
-Copy
-npm init -y
-Install Webpack and Webpack CLI (command-line interface):
-
-bash
-Copy
-npm install webpack webpack-cli --save-dev
-Step 2: Project Structure
-Create the following file structure:
-
-Copy
-my-webpack-project/
-├── src/
-│ ├── index.js
-│ └── styles.css
-├── dist/
-├── webpack.config.js
-└── package.json
-src/index.js: Main JavaScript file.
-
-src/styles.css: CSS styles file.
-
-dist/: Folder where Webpack will generate optimized files.
-
-webpack.config.js: Webpack configuration file.
 
 ### Run Test
 
@@ -287,19 +212,19 @@ Jeysson Contreras
 
 🧑🏻‍💻 *Author 1*
 
- - GitHub: [@alyconr](
-https://github.com/alyconr
-)
- - LinkedIn: [LinkedIn](
-https://www.linkedin.com/in/jeysson-aly-contreras
-)
-🧑🏻‍💻 *Author 2*
- - GitHub: [Nelson Sebastian Castañeda Gutierrez](
-https://github.com/SebastianGutierrez23
-)
- - LinkedIn: [LinkedIn](
-https://www.linkedin.com/in/sebastian-guti%C3%A9rrez-236b9b206/
+ -STIVEN SUAREZ
 
+🧑🏻‍💻 *Author 2*
+
+ -JHON DIAZ
+
+🧑🏻‍💻 *Author 3*
+
+ -JONNY GUZMAN
+
+ 🧑🏻‍💻 *Author 4
+
+ -NELSON CASTAÑEDA
 
 ## 🕹️ Future Features <a name="future-features"></a>
 

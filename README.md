@@ -235,7 +235,8 @@ finca-cheona/
 ├── public/            # Archivos estáticos
 └── styles/            # Estilos globales
 ```
-
+Please note that to run Selenium, both the backend and frontend services must be enabled.
+ Run the command python -m pytest test_main.py.
 
 
 
@@ -247,7 +248,7 @@ Deploy using your local enviroment
 
 ## 👥 Authors <a name="authors"></a>
 
-Jeysson Contreras
+
 
 🧑🏻‍💻 *Author 1*
 

@@ -135,6 +135,23 @@ def leer_inicio():
 
 3: uvicorn main:app --reload
 
+NEXT.JS
+
+# Finca Cheona - Guía de Desarrollo Local
+
+## Requisitos Previos
+- Node.js (versión 18 o superior)
+- npm (incluido con Node.js)
+- Visual Studio Code
+
+## Extensiones Recomendadas para VS Code
+
+- Tailwind CSS IntelliSense
+- ESLint
+- Prettier
+- PostCSS Language Support
+
+
 
 
 ### Install
@@ -152,7 +169,19 @@ Install FAS API
 5:We must also install the SQL connector.
 pip install mysql-connector-python
 
+## Installation NEXT.JS
 
+1. Clone the repository to your local machine
+2. Open the project in Visual Studio Code
+3. Open a terminal in VS Code (Ctrl + `)
+4. Install the dependencies:
+```bash
+npm install
+```
+5. Start the development server:
+```bash
+npm run dev
+```
     
     
 
@@ -175,27 +204,31 @@ Then we can view our application at the address that it gives us in this case ht
 
 ### Run Test
 
-To run tests, run the following command:
+FAST API
 
-To test the Stylelint linter:
+The backend must be run in the command console by running python -m uvicorn main:app --reload
 
-    npx stylelint "**/*.{css,scss}"
-To test the Webhint:
+Then we can view our application at the address that it gives us in this case http://127.0.0.1:8000/docs
 
-    npx hint .
-To test the ESLint linter:
 
-    npx eslint .
+NEXT.JS
+## Scripts Disponibles
 
-** WEBPACK**
+- `npm run dev`: Inicia el servidor de desarrollo
+- `npm run build`: Construye la aplicación para producción
+- `npm start`: Ejecuta la versión construida
+- `npm run lint`: Ejecuta el linter
 
-Ejecutar Webpack
-Ejecuta Webpack para empaquetar tu proyecto:
+## Estructura del Proyecto
 
-bash
-Copy
-npx webpack
-Webpack generará un archivo bundle.js en la carpeta dist/.
+```
+finca-cheona/
+├── app/                # Páginas y rutas de Next.js
+├── components/         # Componentes reutilizables
+├── lib/               # Utilidades y funciones auxiliares
+├── public/            # Archivos estáticos
+└── styles/            # Estilos globales
+```
 
 
 

@@ -7,7 +7,7 @@
 
 <img src="logo.png" alt="logo" width="140" height="auto" style="border-radius:50%"   />
 <br/>
-<h3><b>Proyecto formulario web pack</b>
+<h3><b>Proyecto practico finca cheona hoteleria</b>
 
 </div>
 
@@ -32,16 +32,17 @@
 - [❓ FAQ ](#faq)
 - [📃 License](#license)
 
-# 📖 [Formulario Web]<a name="about-project"></a>
+# 📖 [Proyecto Finca Cheona]<a name="about-project"></a>
 
-*[Formulario Web]* 
-This is my first project at SENA in which we use configurations to perform deployments in Azure.
+*[Proyecto Finca Cheona]* 
+
+Implement a comprehensive information system at the CHEONA recreational property to optimize reservation management and improve direct communication with customers, reducing dependence on external services and strengthening the company's operational and competitive efficiency.
 
 ## ⚒️ Build With <a name="built-with"></a>
 
 <p>
 This Projects was built using:
-HTML,CSS, JAVA SCRIPT, MARKDOWN AND SHELLSCRIPT, GIT, GITHUB
+HTML,CSS, JAVA SCRIPT, PYTHON, GIT, GITHUB,MYSQL,SQL,SELENIUM,NEXT.JS
 </p>
 
 ### Tech Stack <a name="tech-stack"></a>
@@ -49,9 +50,12 @@ HTML,CSS, JAVA SCRIPT, MARKDOWN AND SHELLSCRIPT, GIT, GITHUB
 <li> HTML </li>
 <li> CSS </li>
 <li> JAVE SCRIPT </li>
-<li> MARKDOWN </li>
+<li> SQL </li>
 <li> GIT </li>
 <li> GITHUB </li>
+<li> MYSQL </li>
+<li> NEXT.JS </li>
+<li> SELENIUM </li>
 
 <details>
 <summary> Client </summary>
@@ -88,83 +92,84 @@ To run this project you need the following tools:
 - [VS Code]
 - [Node.js]
 - [Git and GitHub]
+- [SELENIUM]
+- [FAST API]
+
 
 
 ### Setup
 
-Linters
-A linter is a tool that analyzes your source code to flag programming errors, bugs, stylistic errors, and suspicious constructs(source: Wikipedia).
+FAST API
 
-There are a few reasons for using linters:
+🚀 What is FastAPI?
+FastAPI is a modern Python framework for creating APIs (programming interfaces) quickly, efficiently, and securely.
 
-Catching syntax errors is more efficient. There is no need to debug simple mistakes like typos - the linter does it for you.
-The entire codebase looks like written by one person.
-Programmers can focus on solving problems, instead of cleaning up the code.
+It's widely used in the backend when you want your app (e.g., built in React, Next.js, Angular, etc.) to connect to a server to read or send data.
 
-1: The project structure must be organized
+🎯 What is it for?
+Create RESTful APIs (create, read, update, delete data).
 
-2: The files .hintrc.txt and .stylelintrc.json must be copied to save them.
+Develop fast backends for web and mobile applications.
 
-3: The installations must be started as appropriate following the steps mentioned.
+Integrate with databases.
 
-4: It must be verified that there are no errors, if there are, they must be corrected.
+Connect with modern frontends (React, Vue, Next.js, etc.).
 
-5: The following files are copied and configured 
-server.js, webpack.config.js, .babelrc.
+Use in machine learning, data science, or microservices.
 
-6: Then, the installation of what is requested by the previous files for its operation is carried out.
+1: pip install fastapi uvicorn
+
+2: Crea un archivo llamado main.py con este contenido:
+
+python
+Copiar
+Editar
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+def leer_inicio():
+    return {"mensaje": "¡Hola desde FastAPI!"}
+    
+
+3: uvicorn main:app --reload
+
 
 
 ### Install
 
-Install this project with:
+Install FAS API
 
-Lighthouse run
+1: 1: First, install Python.
 
-    npm install -g @lhci/cli@0.7.x
-Webhint:
+2: Download it from the official Python website.
 
-     npm install --save-dev hint@7.x
-Stylelint:
+3: Run the installer to install all the complete packages.
 
-     npm install --save-dev stylelint@13.x stylelint-scss@3.x stylelint-config-standard@21.x stylelint-csstree-validator@1.x
-Eslint
+4: Then, run pip install fastapi uvicorn in the command console.
 
-     npm install --save-dev eslint@7.x eslint-config-airbnb-base@14.x eslint-plugin-import@2.x babel-eslint@10.x
+5:We must also install the SQL connector.
+pip install mysql-connector-python
 
-Webpack
 
-     npm init -y
-     npm install webpack webpack-cli --save-dev
-Webpack Css loader
-
-     npm install --save-dev style-loader css-loader
-Webpack html loader
-
-     npm install --save-dev html-loader
-Webpack html plugin
-
-     npm install --save-dev html-webpack-plugin
-Webpack dev server
-
-     npm install --save-dev webpack-dev-server     
+    
+    
 
 
 
 ### Usage 
 
-1. Install a linter
-First, you must install the linter corresponding to the language you are using. Some common examples:
+1. BACKEND
 
-JavaScript/TypeScript: ESLint (npm install eslint --save-dev)
 
-Python: Flake8 or Pylint (pip install flake8 or pip install pylint)
+2:Esta contruido en fast api en lenguaje python,para realizar las pruebes del crud
 
-CSS/SCSS: Stylelint (npm install stylelint --save-dev)
+3:It's built on Fast API in Python to perform CRUD testing.
 
-HTML: HTMLHint (npm install htmlhint --save-dev)
+The backend must be run in the command console by running python -m uvicorn main:app --reload
 
-Go: Golangci-lint (go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest)
+Then we can view our application at the address that it gives us in this case http://127.0.0.1:8000/docs
 
 2. Configure the linter
 Linters are usually highly configurable. You can define specific rules in a configuration file. For example:

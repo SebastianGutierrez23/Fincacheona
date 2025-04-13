@@ -181,9 +181,15 @@ npm install
 5. Start the development server:
 ```bash
 npm run dev
+
 ```
-    
-    
+ Install Selenium
+
+1: Run pip install webdriver-manager
+2: Install pytest with the command pip install pytest --force
+3: Install the eco driver by running pip install webdriver-manager
+
+4: Create and configure the test_main.py file
 
 
 

@@ -29,7 +29,25 @@ export default function PaginaGlamping() {
 
   const [clientes, setClientes] = useState<Cliente[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-
+  const [inputId, setInputId] = useState<number | ''>('');
+  const eliminarCliente = (id: number) => {
+    setIsLoading(true);
+    fetch(`http://127.0.0.1:8000/cliente_1/${id}`, {method: 'DELETE',})
+      .then((response) => {
+        if (response.ok) {
+          alert(`Cliente con ID ${id} eliminado correctamente`);
+          setClientes(clientes.filter((cliente) => cliente.Numeroidentificacióncliente !== id));
+        } else {
+          alert('No se pudo eliminar el cliente');
+        }
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error('Error eliminando cliente:', error);
+        setIsLoading(false);
+      });
+  };
+  
   // Función para obtener los datos del cliente desde la API
   const glampingClick = (params: number) => {
     setIsLoading(true);
@@ -85,9 +103,49 @@ export default function PaginaGlamping() {
              //   }, []);
             
             >
+              
               Reservar Ahora
+
+              
             </Button>
+            <input
+  type="number"
+  placeholder="Ingrese ID del cliente"
+  value={inputId}
+  onChange={(e) => setInputId(Number(e.target.value))}
+  className="w-full md:w-64 px-4 py-2 rounded-md border border-gray-300 mb-4"
+/>
+
+<Button 
+  size="lg"
+  className="bg-primary text-primary-foreground hover:bg-primary/90 animate-slide-up"
+  onClick={() => {
+    if (inputId !== '') {
+      glampingClick(inputId);
+    }
+  }}
+>
+  Buscar Cliente
+
+ 
+</Button>
+
+<Button 
+  size="lg"
+  variant="destructive"
+  className="ml-2"
+  onClick={() => {
+    if (inputId !== '') {
+      eliminarCliente(inputId);
+    }
+  }}
+>
+  Eliminar Cliente
+</Button>
+
+
           </div>
+
         </div>
       </section>
 

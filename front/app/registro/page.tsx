@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -7,6 +10,49 @@ import Link from 'next/link';
 import { UserPlus } from 'lucide-react';
 
 export default function PaginaRegistro() {
+  const [nombre, setNombre] = useState('');
+  const [apellidos, setApellidos] = useState('');
+  const [email, setEmail] = useState('');
+  const [telefono, setTelefono] = useState('');
+  const [direccion, setDireccion] = useState('');
+  const [tipoDocumento, setTipoDocumento] = useState('');
+  const [numeroDocumento, setNumeroDocumento] = useState('');
+  
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+
+    const nuevoUsuario = {
+      Direccióncliente: direccion,
+      Correocliente: email,
+      Telefonocliente: parseInt(telefono),
+      Tipoidentificación: tipoDocumento,
+      Numeroidentificacióncliente: parseInt(numeroDocumento),
+      Nombredecliente: nombre,
+      Apellidosdecliente: apellidos,
+    };
+
+    try {
+      const response = await fetch('http://127.0.0.1:8000/cliente_insert/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(nuevoUsuario),
+      });
+
+      if (response.ok) {
+        alert('Usuario registrado correctamente');
+        // Puedes limpiar los campos si lo deseas
+      } else {
+        alert('Error al registrar el usuario');
+      }
+    } catch (error) {
+      console.error('Error en el registro:', error);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background flex items-center justify-center p-4">
       <Card className="w-full max-w-md">
@@ -20,29 +66,30 @@ export default function PaginaRegistro() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <form className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="nombre">Nombre completo</Label>
-              <Input 
-                id="nombre" 
-                placeholder="Juan Pérez" 
-                required 
-                className="bg-background"
-              />
+              <Label htmlFor="nombre">Nombre</Label>
+              <Input id="nombre" required value={nombre} onChange={(e) => setNombre(e.target.value)} />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="apellidos">Apellidos</Label>
+              <Input id="apellidos" required value={apellidos} onChange={(e) => setApellidos(e.target.value)} />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="direccion">Dirección</Label>
+              <Input id="direccion" required value={direccion} onChange={(e) => setDireccion(e.target.value)} />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="telefono">Teléfono</Label>
+              <Input id="telefono" type="number" required value={telefono} onChange={(e) => setTelefono(e.target.value)} />
             </div>
             <div className="space-y-2">
               <Label htmlFor="email">Correo electrónico</Label>
-              <Input 
-                id="email" 
-                type="email" 
-                placeholder="juan@ejemplo.com" 
-                required 
-                className="bg-background"
-              />
+              <Input id="email" type="email" required value={email} onChange={(e) => setEmail(e.target.value)} />
             </div>
             <div className="space-y-2">
               <Label htmlFor="tipo-documento">Tipo de documento</Label>
-              <Select>
+              <Select onValueChange={setTipoDocumento}>
                 <SelectTrigger className="bg-background">
                   <SelectValue placeholder="Selecciona el tipo" />
                 </SelectTrigger>
@@ -55,42 +102,13 @@ export default function PaginaRegistro() {
             </div>
             <div className="space-y-2">
               <Label htmlFor="numero-documento">Número de documento</Label>
-              <Input 
-                id="numero-documento" 
-                placeholder="1234567890" 
-                required 
-                className="bg-background"
-              />
+              <Input id="numero-documento" type="number" required value={numeroDocumento} onChange={(e) => setNumeroDocumento(e.target.value)} />
             </div>
-            <div className="space-y-2">
-              <Label htmlFor="password">Contraseña</Label>
-              <Input 
-                id="password" 
-                type="password" 
-                required 
-                className="bg-background"
-              />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="confirm-password">Confirmar contraseña</Label>
-              <Input 
-                id="confirm-password" 
-                type="password" 
-                required 
-                className="bg-background"
-              />
-            </div>
-            <Button className="w-full bg-primary hover:bg-primary/90" type="submit">
-              Crear cuenta
-            </Button>
+          
+            <Button type="submit" className="w-full bg-primary hover:bg-primary/90">Crear cuenta</Button>
             <div className="text-center text-sm">
               ¿Ya tienes una cuenta?{' '}
-              <Link 
-                href="/login" 
-                className="text-primary hover:underline font-medium"
-              >
-                Iniciar sesión
-              </Link>
+              <Link href="/login" className="text-primary hover:underline font-medium">Iniciar sesión</Link>
             </div>
           </form>
         </CardContent>

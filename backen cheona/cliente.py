@@ -13,9 +13,9 @@ class Cliente(BaseModel):
     
     Direccióncliente : str  
     Correocliente : str 
-    Telefonocliente : int 
+    Telefonocliente : float 
     Tipoidentificación : str
-    Numeroidentificacióncliente : int 
+    Numeroidentificacióncliente : float 
     Nombredecliente : str
     Apellidosdecliente : str
     

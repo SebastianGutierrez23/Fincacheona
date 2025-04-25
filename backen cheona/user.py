@@ -15,10 +15,10 @@ class User(BaseModel):
     NombreUsuario : str
     ApellidodeUsuario :str
     Tipoidentificación : str 
-    Numeroidentificación : int 
+    Numeroidentificación : float
     Estadodelusuario : str 
     Correodeusuario : str
-    Telefonodeusuario : int
+    Telefonodeusuario : float
     
    
  

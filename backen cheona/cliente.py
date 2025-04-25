@@ -18,6 +18,8 @@ class Cliente(BaseModel):
     Numeroidentificacióncliente : float 
     Nombredecliente : str
     Apellidosdecliente : str
+    Contraseña : str
+    ConfirmarContraseña : str
     
 @cliente_rtr.get("/clientes/")
 async def get_clientes(id:int):
@@ -35,11 +37,11 @@ def insert_cliente(cliente : Cliente):
 
     insert_query = """ 
     INSERT INTO cliente (Direccióncliente,  Correocliente, Telefonocliente, Tipoidentificación, 
-                        Numeroidentificacióncliente,  Nombredecliente, Apellidosdecliente) 
-    VALUES (%s, %s, %s, %s, %s, %s, %s)
+                        Numeroidentificacióncliente,  Nombredecliente, Apellidosdecliente, Contraseña, ConfirmarContraseña) 
+    VALUES (%s, %s, %s, %s, %s, %s, %s,%s, %s)
     """
     values = (cliente.Direccióncliente, cliente.Correocliente, cliente.Telefonocliente, cliente.Tipoidentificación, 
-              cliente.Numeroidentificacióncliente, cliente.Nombredecliente, cliente.Apellidosdecliente)
+              cliente.Numeroidentificacióncliente, cliente.Nombredecliente, cliente.Apellidosdecliente,cliente.Contraseña,cliente.ConfirmarContraseña)
 
     try:
         cursor.execute(insert_query, values)
